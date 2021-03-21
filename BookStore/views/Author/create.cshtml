@@ -1,0 +1,27 @@
+﻿
+
+@model BookStore.models.Author
+
+
+@{
+    ViewData["Title"] = "ADD AUTHOR";
+}
+<form asp-action="create" method="post" class="mt-4">
+   
+    <div class="form-group">
+        <label>full name</label>
+        <input asp-for="FullName" class="form-control" />
+
+
+    </div>
+    <div class="form-group">
+        <input type="submit" placeholder="create" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-outline-info">Back to List</a>
+    </div>
+
+
+
+</form>
+
+
+

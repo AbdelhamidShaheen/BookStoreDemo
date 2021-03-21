@@ -1,0 +1,43 @@
+﻿
+@model IEnumerable<BookStore.models.Author>
+
+@{
+    ViewData["Title"] = "AUTHORS";
+}
+
+<a asp-action="create" class="btn btn-primary mt-4 mb-2"> create new</a>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Author name</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model)
+        {
+
+
+            <tr class="btn-">
+                <th scope="row">@i.Id</th>
+                <td>@i.FullName</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = i.Id }, new { @class = "btn btn-primary" })
+                    @Html.ActionLink("Details", "Details", new { id = i.Id }, new { @class = "btn btn-info" })
+                    @Html.ActionLink("Delete", "Delete", new { id = i.Id }, new { @class = "btn btn-danger" })
+                </td>
+
+
+            </tr>
+
+        }
+
+
+    </tbody>
+</table>
+
+
+
