@@ -50,8 +50,14 @@ namespace BookStore
                 endpoints.MapGet("/", async context =>
                 {
 
-                    context.Response.Redirect("Author/Index");
+                    context.Response.Redirect("Home/Index");
                 });
+
+                endpoints.MapControllerRoute(name: "default", pattern: "{controller=Book}/{action=Index}");
+                endpoints.MapControllerRoute(name: "default", pattern: "{controller=Book}/{action=Details}");
+                endpoints.MapControllerRoute(name: "default", pattern: "{controller=Book}/{action=Create}");
+                endpoints.MapControllerRoute(name: "default", pattern: "{controller=Book}/{action=Edit}");
+                endpoints.MapControllerRoute(name: "default", pattern: "{controller=Book}/{action=Delete}");
 
                 endpoints.MapControllerRoute(name: "default", pattern: "{controller=Author}/{action=Index}");
                 endpoints.MapControllerRoute(name: "default", pattern: "{controller=Author}/{action=Details}");
@@ -59,11 +65,7 @@ namespace BookStore
                 endpoints.MapControllerRoute(name: "default", pattern: "{controller=Author}/{action=Edit}");
                 endpoints.MapControllerRoute(name: "default", pattern: "{controller=Author}/{action=Delete}");
 
-                endpoints.MapControllerRoute(name: "default", pattern: "{controller=Book}/{action=Index}");
-                endpoints.MapControllerRoute(name: "default", pattern: "{controller=Book}/{action=Details}");
-                endpoints.MapControllerRoute(name: "default", pattern: "{controller=Book}/{action=Create}");
-                endpoints.MapControllerRoute(name: "default", pattern: "{controller=Book}/{action=Edit}");
-                endpoints.MapControllerRoute(name: "default", pattern: "{controller=Book}/{action=Delete}");
+                
 
 
 
