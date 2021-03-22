@@ -44,8 +44,9 @@ namespace BookStore.models.repository
 
         public void update(int id,Book t)
         {
+            
             dp.book.Update(t);
-            save();
+            dp.SaveChanges();
 
 
         }

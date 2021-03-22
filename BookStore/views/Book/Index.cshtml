@@ -26,6 +26,10 @@
 
             </th>
             <th>
+                Image
+
+            </th>
+            <th>
 
             </th>
         </tr>
@@ -46,9 +50,12 @@
                 @Html.DisplayFor(modelItem => item.Author.FullName)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new {  id=item.Id },new {@class="btn btn-primary" }) 
-                @Html.ActionLink("Details", "Details", new {  id= item.Id }, new {@class="btn btn-info"}) 
-                @Html.ActionLink("Delete", "Delete", new {  id= item.Id }, new { @class = "btn btn-danger" })
+                <img src="~/media/@item.UrlImage"  style="width:100px;" class="img-thumbnail"/>
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-info" })
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
             </td>
         </tr>
 }

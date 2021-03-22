@@ -27,6 +27,9 @@ namespace BookStore.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UrlImage = table.Column<string>(type: "nvarchar(max)", nullable: true),
+
+                    
                     AuthorId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>

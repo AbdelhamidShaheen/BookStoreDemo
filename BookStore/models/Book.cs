@@ -13,6 +13,8 @@ namespace BookStore.models
 
         public string Description { get; set; }
 
+        public string UrlImage { get; set; }
         public Author Author { get; set; }
+
     }
 }

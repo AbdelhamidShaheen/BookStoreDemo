@@ -4,6 +4,7 @@ using BookStore.models;
 
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 
 namespace BookStore.ViewModel
 {
@@ -18,5 +19,10 @@ namespace BookStore.ViewModel
         public int AuthorId { get; set; }
 
         public List<Author> authors { get; set; }
+
+        public IFormFile file { get; set; }
+
+        public string ImageUrl { get; set; }
+
     }
 }
