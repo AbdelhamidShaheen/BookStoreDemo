@@ -50,7 +50,7 @@
                 @Html.DisplayFor(modelItem => item.Author.FullName)
             </td>
             <td>
-                <img src="~/media/@item.UrlImage"  style="width:100px;" class="img-thumbnail"/>
+                <img src="~/media/@item.UrlImage"  style="height:50px;" class="img-thumbnail"/>
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-primary" })

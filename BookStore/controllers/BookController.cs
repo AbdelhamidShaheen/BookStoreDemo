@@ -159,9 +159,15 @@ namespace BookStore.controllers
             var UploadPath = Path.Combine(hosting.WebRootPath, "media");
             var ImagePath = this.BookRepository.find(id).UrlImage;
             var FullOldImageP = Path.Combine(UploadPath, ImagePath);
-            System.IO.File.Delete(FullOldImageP);
+            FileInfo info = new FileInfo(FullOldImageP);
+            if (info.Exists)
+            {
+                System.IO.File.Delete(FullOldImageP);
+                info.Delete();
+
+            }
             this.BookRepository.delete(id);
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Index),"Book");
         }
 
         // POST: BookController/Delete/5
